@@ -1,10 +1,10 @@
 # RESTful API WITH EXPRESS
 That developed application is a RESTful API with a single endpoint that fetches the data in the provided MongoDB collection and return the results in the requested format. It written in Node.js using Express framework. Also, used Mongoose and JOI libraries. There is only one endpoint just handle HTTP POST requests. The application is deployed on Heroku. 
 
-Heroku url is " ". 
+Heroku url is "https://nodejs-restfulapi-ahmet.herokuapp.com/". 
 
 > You can use npm start to run source code in your own machine.<br>
-> You need to post request to /records endpoint. 
+> You need to post request to "https://nodejs-restfulapi-ahmet.herokuapp.com/records" . 
 
 You have to provide request body in JSON. It has to be 4 fields. The 4 fields are "startDate",  "endDate", "minCount", "maxCount".   "startDate" and "endDate" are in string format which is “YYYY-MM-DD” format. Also, "minCount" and "maxCount" are in number format.  App filters data accoring to that fields. "endDate" must be greater or equal than "startDate". "maxCount" must be greater than "minCount". If you don't provide 4 fields according that, you will get error response. I used JOI module and it provides that functions. It validates data.
 
