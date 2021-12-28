@@ -5,6 +5,10 @@ const errorRoutes = require("./src/routes/ErrorUrl");
 const express = require("express");
 const app = express();
 
+const dotenv = require("dotenv");
+dotenv.config();
+
+
 //Server accepts only JSON body
 app.use(express.json());
 
