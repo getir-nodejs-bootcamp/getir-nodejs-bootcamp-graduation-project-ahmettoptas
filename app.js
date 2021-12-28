@@ -5,6 +5,10 @@ const errorRoutes = require("./src/routes/ErrorUrl");
 const express = require("express");
 const app = express();
 
+const dotenv = require("dotenv");
+dotenv.config();
+
+
 //Server accepts only JSON body
 app.use(express.json());
 
@@ -13,7 +17,7 @@ connection();
 
 
 //Server accepts only /records url, otherwise it directs to error
-app.listen(3000, () => {
+app.listen(process.env.PORT || 3000, () => {
     console.log("Server is listening on port 3000...");
     app.use("/records",recordRoutes);
     app.use("/*",errorRoutes);

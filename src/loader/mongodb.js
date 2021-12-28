@@ -1,7 +1,5 @@
 const Mongoose = require("mongoose");
-const dotenv = require("dotenv");
 
-dotenv.config();
 const db = Mongoose.connection;
 
 db.once("open", () => {
