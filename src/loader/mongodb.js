@@ -1,5 +1,7 @@
 const Mongoose = require("mongoose");
+const dotenv = require("dotenv");
 
+dotenv.config();
 const db = Mongoose.connection;
 
 db.once("open", () => {
@@ -7,7 +9,8 @@ db.once("open", () => {
   });
   
   const connectDB = () => {
-    Mongoose.connect(`mongodb+srv://challengeUser:WUMglwNBaydH8Yvu@challenge-xzwqd.mongodb.net/getir-case-study?retryWrites=true`, {
+    const { DB_URI } = process.env;
+    Mongoose.connect(`${DB_URI}`, {
       useNewUrlParser: true,
       useUnifiedTopology: true,
     });
